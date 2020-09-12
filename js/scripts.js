@@ -9,6 +9,7 @@ setupGame()
 
 function setupGame(){
   score = 0
+  document.getElementById("score").innerHTML = score
   for (let i = 0; i < 16; i++){
     matrix[i] = document.createElement("div")
     document.getElementById("board").appendChild(matrix[i])
@@ -131,7 +132,6 @@ function performAddition(i){
     if(matrix[end].innerHTML !== ""){
       if(matrix[end].innerHTML === matrix[end-1].innerHTML){
         matrix[end].innerHTML = matrix[end].innerHTML * 2
-        updateScore
         score += parseInt(matrix[end].innerHTML)
         document.getElementById("score").innerHTML = score
         matrix[end-1].innerHTML = ""
