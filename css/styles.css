@@ -4,24 +4,41 @@
   padding-left: 10px;
   padding-right: 10px;
 
-  width: 100%;
-  }
+  width: 415px; 
+}
 
-.title {
+.header{
+  margin-left: auto;
+  margin-right: auto;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuitem {
+  margin-top: 0;
+  height: 100px;
+  width: 100px;
   text-align: center;
+  background-color: beige;
 }
 
 #board {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 50px;
 
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-flow: column;
+  justify-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+  grid-gap: 5px;
 }
 
 #board div {
-  margin: 1px;
-  text-align: center;
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  font-size: 3em;
 }

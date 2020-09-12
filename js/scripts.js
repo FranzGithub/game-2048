@@ -29,12 +29,17 @@ function placeNumber(){
   }
 }
 
+function setScore(score){
+
+}
+
 function gameOver(){
   if(score > best){
     best = score
+    document.getElementById("best").innerHTML = best
   }
-  console.log(score, best)
   alert("Game over")
+  document.getElementById("board").innerHTML = ''
   setupGame()
 }
 
@@ -111,7 +116,6 @@ function performRotation(i){
     
     let rotations = 0
     while(matrix[end].innerHTML == "" && rotations < (end-start)){
-      console.log("rotations",rotations)
       rotate(start, end)
       rotations++
     } 
@@ -125,11 +129,11 @@ function performAddition(i){
     const end = j
 
     if(matrix[end].innerHTML !== ""){
-      console.log("NOT EMPTY")
-      console.log(i,j)
       if(matrix[end].innerHTML === matrix[end-1].innerHTML){
         matrix[end].innerHTML = matrix[end].innerHTML * 2
+        updateScore
         score += parseInt(matrix[end].innerHTML)
+        document.getElementById("score").innerHTML = score
         matrix[end-1].innerHTML = ""
         rotate(start, end-1)
       }
@@ -162,3 +166,9 @@ function rotateBoard90(times){
     matrix[12].innerHTML = copy[15].innerHTML
   }
 }
+
+const canvas_dom = document.getElementById("board")
+canvas_dom.addEventListener("touchstart",  function(event) {event.preventDefault()})
+canvas_dom.addEventListener("touchmove",   function(event) {event.preventDefault()})
+canvas_dom.addEventListener("touchend",    function(event) {event.preventDefault()})
+canvas_dom.addEventListener("touchcancel", function(event) {event.preventDefault()})
