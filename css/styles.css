@@ -1,0 +1,29 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 960px;
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+#board {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+}
+
+#board div {
+  margin: 1px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  border: 1px solid black;
+}
